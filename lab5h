@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+#include <locale.h>
+
+int main(void)
+{
+    setlocale(LC_ALL, "RUS");
+    double x, y, F;
+
+    printf("Введите x: ");
+    scanf("%lf", &x);
+    printf("Введите y: ");
+    scanf("%lf", &y);
+
+    /* числитель: 1 + sin^2(x + y) */
+    double числитель = 1 + sin(x + y) * sin(x + y);
+
+    /* знаменатель: 2 + |x - 2x / (1 + x^2 * y^2)| */
+    double дробь = 2 * x / (1 + x * x * y * y);
+    double знаменатель = 2 + fabs(x - drob);
+
+    F = числитель / знаменатель + x;
+
+    printf("F = %.4f\n", F);
+
+    return 0;
+}
